@@ -9,11 +9,8 @@ import ast
 # Load data from CSV
 # Look for the multi_parameter_benchmark_results.csv in checkpoints directory
 script_dir = Path(os.path.dirname(os.path.abspath(__file__)))
-benchmark_file = script_dir.parent / "analyses" / "big_script" / "checkpoints" / "multi_parameter_benchmark_results.csv"
 
-# Fallback to local file if not found in expected location
-if not benchmark_file.exists():
-    benchmark_file = "multi_parameter_benchmark_results.csv"
+benchmark_file = "multi_parameter_benchmark_results.csv"
 
 # Load the data
 data = pd.read_csv(benchmark_file)
@@ -41,7 +38,7 @@ pattern_explanations = {
 # Handle PMF & Example Explorer separately (different layout)
 if selected_dashboard == "PMF & Example Explorer":
     # Load the PMF and examples CSV
-    pdf_csv_path = script_dir.parent / "analyses" / "collision" / "pdfs_and_examples.csv"
+    pdf_csv_path = "pdfs_and_examples.csv"
     
     if not pdf_csv_path.exists():
         st.warning("PMF/example data not found. Please run the collision analysis first.")
