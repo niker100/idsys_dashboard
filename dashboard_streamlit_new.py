@@ -40,7 +40,7 @@ if selected_dashboard == "PMF & Example Explorer":
     # Load the PMF and examples CSV
     pdf_csv_path = "pdfs_and_examples.csv"
     
-    if not pdf_csv_path.exists():
+    if not pdf_csv_path:
         st.warning("PMF/example data not found. Please run the collision analysis first.")
         st.info(f"Expected file location: {pdf_csv_path}")
     else:
